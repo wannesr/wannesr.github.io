@@ -11,8 +11,10 @@
 
 <script type="text/babel">
   function App() {
-   const data = 'assetlinks.json'
+   const data = JSON.parse('assetlinks.json')
     console.log(data)
+    if(data[0].deeplink)
+      window.location.href = data[0].deeplink
 
     return (
             <>
