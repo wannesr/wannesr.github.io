@@ -11,15 +11,7 @@
 
 <script type="text/babel">
   function App() {
-   const data = JSON.parse([
-             {
-               "deepLink": "cppc://test"
-             }
-           ]
-   )
-    console.log(data)
-    if(data[0].deeplink)
-      window.location.href = data[0].deeplink
+      window.location.href = "cppc://test"
 
     return (
             <>
