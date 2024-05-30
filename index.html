@@ -10,13 +10,45 @@
 <div id="mydiv"></div>
 
 <script type="text/babel">
-  function Hello() {
-    return <h1>Hello World!</h1>;
-  }
+  function App() {
+    const [jsonData, setJsonData] = useState([]);
 
-  const container = document.getElementById('mydiv');
-  const root = ReactDOM.createRoot(container);
-  root.render(<Hello />)
+    useEffect(() => {
+      const fetchJsonData = async () => {
+        try {
+          // const response = await fetch("../public/assetlinks.json"); // axios.get("../public/assetlinks.json");
+          // const jsonRes = await response.json();
+
+          await fetch("../assetlinks.json", {
+            headers: {
+              accept: "application/json",
+            },
+          })
+                  .then((res) => res.json())
+                  .then((data) => {
+                    console.log("dattttaaa", data);
+                    setJsonData(data);
+                  });
+          // setJsonData(response.data);
+        } catch (error) {
+          console.error("Error fetching JSON data:", error);
+        }
+      };
+
+      fetchJsonData();
+    }, []);
+
+    return (
+            <>
+              <h1>Redirecting to deep link...</h1>
+              {jsonData && jsonData.length > 0 && (
+                      <script>{`window.location.href = '${jsonData[0].deepLink}'`}</script>
+
+                )}
+            </>
+);
+}
+  root.render(<App />)
 </script>
 
 </body>
