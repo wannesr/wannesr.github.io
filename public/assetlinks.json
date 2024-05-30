@@ -5,7 +5,7 @@
     ],
     "target": {
       "namespace": "web",
-      "site": "https://wannesr.github.io"
+      "site": "https://wannesr.github.io."
     }
   },
   {
