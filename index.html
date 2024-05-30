@@ -11,35 +11,8 @@
 
 <script type="text/babel">
   function App() {
-    const [jsonData, setJsonData] = useState([]);
-
-    useEffect(() => {
-      const fetchJsonData = async () => {
-        try {
-          await fetch("assetlinks.json", {
-            headers: {
-              accept: "application/json",
-            },
-          })
-                  .then((res) => res.json())
-                  .then((data) => {
-                    console.log("dattttaaa", data);
-                    setJsonData(data);
-                  });
-          // setJsonData(response.data);
-        } catch (error) {
-          console.error("Error fetching JSON data:", error);
-        }
-      };
-
-      fetchJsonData();
-    }, []);
-
-    useEffect(() =>{
-      if(jsonData && jsonData.length > 0 ){
-              window.location.href =jsonData[0].deepLink
-    }
-  },[jsonData])
+   const data = 'assetlinks.json'
+    console.log(data)
 
     return (
             <>
