@@ -1,11 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
-Hello word
+
+<div id="mydiv"></div>
+
+<script type="text/babel">
+  function Hello() {
+    return <h1>Hello World!</h1>;
+  }
+
+  const container = document.getElementById('mydiv');
+  const root = ReactDOM.createRoot(container);
+  root.render(<Hello />)
+</script>
+
 </body>
 </html>
