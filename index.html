@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script type="text/javascript" src="assetlinks.json"></script>
-</head>
 <body>
 
 <div id="mydiv"></div>
 
 <script type="text/babel">
   function App() {
-   const data = JSON.parse(assetlinks)
+   const data =JSON.parse([{"deepLink": "cppc://test"}])
     console.log(data)
-    console.log(data[0].deeplink)
-   // if(data[0].deeplink)
-    //  window.location.href = data[0].deeplink
+    if(data[0].deeplink)
+     window.location.href = data[0].deeplink
 
     return (
             <>
