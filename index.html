@@ -16,10 +16,7 @@
     useEffect(() => {
       const fetchJsonData = async () => {
         try {
-          // const response = await fetch("../public/assetlinks.json"); // axios.get("../public/assetlinks.json");
-          // const jsonRes = await response.json();
-
-          await fetch("../assetlinks.json", {
+          await fetch("assetlinks.json", {
             headers: {
               accept: "application/json",
             },
@@ -38,16 +35,20 @@
       fetchJsonData();
     }, []);
 
+    useEffect(() =>{
+      if(jsonData && jsonData.length > 0 ){
+              window.location.href =jsonData[0].deepLink
+    }
+  },[jsonData])
+
     return (
             <>
               <h1>Redirecting to deep link...</h1>
-              {jsonData && jsonData.length > 0 && (
-                      <script>{`window.location.href = '${jsonData[0].deepLink}'`}</script>
-
-                )}
             </>
 );
 }
+const container = document.getElementById('mydiv');
+  const root = ReactDOM.createRoot(container);
   root.render(<App />)
 </script>
 
