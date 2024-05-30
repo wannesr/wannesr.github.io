@@ -11,8 +11,9 @@
   function App() {
    const data = JSON.parse(assetlinks)
     console.log(data)
-    if(data[0].deeplink)
-      window.location.href = data[0].deeplink
+    console.log(data[0].deeplink)
+   // if(data[0].deeplink)
+    //  window.location.href = data[0].deeplink
 
     return (
             <>
