@@ -9,14 +9,14 @@
 
   <script>
   function checkApp() {
-      var appScheme = "yourapp://"; // Replace with your app's custom URL scheme
+      var appScheme = "cppc://"; // Replace with your app's custom URL scheme
   
       // Try to open the app
       window.location.href = appScheme;
   
       // If the above fails, the user will be redirected to the Google Play Store
       setTimeout(function() {
-          window.location.href = "https://play.google.com/store/apps/details?id=your.app.package";
+          window.location.href = "https://play.google.com/store/apps/details?id=com.vivezici";
       }, 500); // Adjust delay as needed
   }
 </script>
