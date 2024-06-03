@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
 </head>
 <body>
 
-<div id="mydiv"></div>
+  <button onclick="checkApp()">Check App</button>
 
-<script type="text/babel">
-  function App() {
-      window.location.href = "cppc://test"
-
-    return (
-            <>
-              <h1>Redirecting to deep link...</h1>
-            </>
-);
-}
-const container = document.getElementById('mydiv');
-  const root = ReactDOM.createRoot(container);
-  root.render(<App />)
+  <script>
+  function checkApp() {
+      var appScheme = "yourapp://"; // Replace with your app's custom URL scheme
+  
+      // Try to open the app
+      window.location.href = appScheme;
+  
+      // If the above fails, the user will be redirected to the Google Play Store
+      setTimeout(function() {
+          window.location.href = "https://play.google.com/store/apps/details?id=your.app.package";
+      }, 500); // Adjust delay as needed
+  }
 </script>
-
 </body>
 </html>
